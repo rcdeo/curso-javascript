@@ -16,13 +16,25 @@ class CalcController {
         }, 1000);
     }
 
+    addEventListenerAll(element, events, fn) {
+        events.split(' ').forEach((event) => {
+            element.addEventListener(event, fn, false);
+        });
+    }
+
     initButtonsEvents() {
         let buttons = document.querySelectorAll('#buttons > g, #parts > g');
-
         buttons.forEach((btn, index) => {
-            btn.addEventListener('click', (e) => {
+            this.addEventListenerAll(btn, 'click drag', (e) => {
                 console.log(btn.className.baseVal.replace('btn-', ''));
             });
+            this.addEventListenerAll(
+                btn,
+                'mouseover mouseup mousedown',
+                (e) => {
+                    btn.style.cursor = 'pointer';
+                }
+            );
         });
     }
 
@@ -36,26 +48,32 @@ class CalcController {
     }
 
     get displayTime() {
+        // @ts-ignore
         return this._timeEl.innerHTML;
     }
 
     set displayTime(value) {
+        // @ts-ignore
         this._timeEl.innerHTML = value;
     }
 
     get displayDate() {
+        // @ts-ignore
         return this._dateEl.innerHTML;
     }
 
     set displayDate(value) {
+        // @ts-ignore
         this._dateEl.innerHTML = value;
     }
 
     get displayCalc() {
+        // @ts-ignore
         return this._displayCalcEl.innerHTML;
     }
 
     set displayCalc(value) {
+        // @ts-ignore
         this._displayCalcEl.innerHTML = value;
     }
 
