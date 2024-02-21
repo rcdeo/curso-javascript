@@ -149,7 +149,13 @@ class CalcController {
     }
 
     getResult() {
-        return eval(this._operation.join(''));
+        try {
+            return eval(this._operation.join(''));
+        } catch (e) {
+            setTimeout(() => {
+                this.setError();
+            }, 0.1);
+        }
     }
 
     calc() {
@@ -358,6 +364,7 @@ class CalcController {
         //     // @ts-ignore
         //     return false;
         // }
+
         // @ts-ignore
         this._displayCalcEl.innerHTML = value;
     }
