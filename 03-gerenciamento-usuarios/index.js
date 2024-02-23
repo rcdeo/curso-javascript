@@ -1,15 +1,9 @@
 // @ts-ignore
-let inputName = document.querySelector('#exampleInputName');
-
-// @ts-ignore
-inputName.value = 'Fulano de Tal';
-// @ts-ignore
-inputName.style.color = 'blue';
-
-// InputGenderM
-// InputGenderF
-// InputBirth
-// InputCountry
-// InputEmail1
-// InputPassword1
-// InputFile
+var name = document.querySelector('#exampleInputName');
+var gender = document.querySelectorAll('#form-user-create [name=gender]:checked');
+var birth = document.querySelector('#exampleInputBirth');
+var country = document.querySelector('#exampleInputCountry');
+var email = document.querySelector('#exampleInputEmail');
+var password = document.querySelector('#exampleInputPassword');
+var photo = document.querySelector('#exampleInputFile');
+var admin = document.querySelector('#exampleInputAdmin');
