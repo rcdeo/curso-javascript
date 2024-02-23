@@ -1,11 +1,15 @@
 // @ts-ignore
-let ex1 = document.querySelector('#exampleInputName').outerHTML;
-console.log(ex1);
+let inputName = document.querySelector('#exampleInputName');
 
 // @ts-ignore
-let ex2 = (document.querySelector('#exampleInputName').value = 'Sicrano de Tal');
-console.log(ex2);
-
+inputName.value = 'Fulano de Tal';
 // @ts-ignore
-let ex3 = document.querySelector('#exampleInputName').value;
-console.log(ex3);
+inputName.style.color = 'blue';
+
+// InputGenderM
+// InputGenderF
+// InputBirth
+// InputCountry
+// InputEmail1
+// InputPassword1
+// InputFile
