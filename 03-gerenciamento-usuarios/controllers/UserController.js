@@ -1,3 +1,4 @@
+// @ts-nocheck
 class UserController {
     constructor(formId, tableId) {
         this.formEl = document.getElementById(formId);
@@ -6,16 +7,20 @@ class UserController {
     }
 
     onSubmit() {
-        // @ts-ignore
         this.formEl.addEventListener('submit', (event) => {
             event.preventDefault();
 
-            let values = this.getValues();
+            let btn = this.formEl.querySelector('[type=submit]');
+            btn.disabled = true;
 
+            let values = this.getValues();
             this.getPhoto().then(
                 (content) => {
                     values.photo = content;
                     this.addLine(values);
+
+                    this.formEl.reset();
+                    btn.disabled = false;
                 },
                 (e) => {
                     console.error(e);
@@ -27,7 +32,7 @@ class UserController {
     getPhoto() {
         return new Promise((resolve, reject) => {
             let fileReader = new FileReader();
-            // @ts-ignore
+
             let elements = [...this.formEl.elements].filter((item) => {
                 if (item.name === 'photo') {
                     return item;
@@ -46,14 +51,14 @@ class UserController {
             if (file) {
                 fileReader.readAsDataURL(file);
             } else {
-                resolve('dist/img/boxed-bg.jpg');
+                resolve('https://picsum.photos/200?grayscale');
             }
         });
     }
 
     getValues() {
         let user = {};
-        // @ts-ignore
+
         [...this.formEl.elements].forEach(function (field, index) {
             if (field.name == 'gender') {
                 if (field.checked) {
@@ -66,7 +71,7 @@ class UserController {
             }
         });
         // prettier-ignore
-        // @ts-ignore
+
         return new User(
             user.name, 
             user.gender, 
@@ -88,14 +93,13 @@ class UserController {
             <td>${dataUser.name}</td>
             <td>${dataUser.email}</td>
             <td>${dataUser.admin ? 'Sim' : 'Não'}</td>
-            <td>${dataUser.birth}</td>
+            <td>${dataUser.register.getDate()}/${dataUser.register.getMonth() + 1}/${dataUser.register.getFullYear()}</td>
             <td>
                 <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
                 <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
             </td>
         `;
 
-        // @ts-ignore
         this.tableEl.appendChild(tr);
     }
 }
