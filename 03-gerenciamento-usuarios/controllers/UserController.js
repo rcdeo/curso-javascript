@@ -14,6 +14,8 @@ class UserController {
             btn.disabled = true;
 
             let values = this.getValues();
+            if (!values) return false;
+
             this.getPhoto().then(
                 (content) => {
                     values.photo = content;
@@ -64,6 +66,8 @@ class UserController {
             if (['name', 'email', 'password'].indexOf(field.name) > -1 && !field.value) {
                 field.parentElement.classList.add('has-error');
                 isValid = false;
+            } else {
+                field.parentElement.classList.remove('has-error');
             }
 
             if (field.name == 'gender') {
@@ -78,6 +82,7 @@ class UserController {
         });
 
         if (!isValid) {
+            this.formEl.querySelector('[type=submit]').disabled = false;
             return false;
         }
         // prettier-ignore
