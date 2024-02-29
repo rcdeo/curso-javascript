@@ -58,8 +58,14 @@ class UserController {
 
     getValues() {
         let user = {};
+        let isValid = true;
 
         [...this.formEl.elements].forEach(function (field, index) {
+            if (['name', 'email', 'password'].indexOf(field.name) > -1 && !field.value) {
+                field.parentElement.classList.add('has-error');
+                isValid = false;
+            }
+
             if (field.name == 'gender') {
                 if (field.checked) {
                     user[field.name] = field.value;
@@ -70,8 +76,11 @@ class UserController {
                 user[field.name] = field.value;
             }
         });
-        // prettier-ignore
 
+        if (!isValid) {
+            return false;
+        }
+        // prettier-ignore
         return new User(
             user.name, 
             user.gender, 
