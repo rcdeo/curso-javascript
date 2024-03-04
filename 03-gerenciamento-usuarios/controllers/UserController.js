@@ -108,22 +108,20 @@ class UserController {
             if (file) {
                 fileReader.readAsDataURL(file);
             } else {
-                function getRandomColor() {
-                    const letters = '0123456789ABCDEF';
-                    let color = '';
-                    for (let i = 0; i < 6; i++) {
-                        color += letters[Math.floor(Math.random() * 16)];
-                    }
-                    return color;
-                }
-
-                let firstLetter = this.getValues(formEl).name;
-                firstLetter = firstLetter.charAt(0).toUpperCase();
-
-                const imageUrl = 'https://placehold.co/30x30/' + getRandomColor() + '/white?text=' + firstLetter;
+                let firstLetter = this.getValues(formEl).name.toUpperCase().charAt(0);
+                const imageUrl = 'https://placehold.co/30x30/' + this.getRandomColor() + '/white?text=' + firstLetter;
                 resolve(imageUrl);
             }
         });
+    }
+
+    getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
     }
 
     getValues(formEl) {
