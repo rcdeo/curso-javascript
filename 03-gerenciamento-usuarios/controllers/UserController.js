@@ -27,7 +27,11 @@ class UserController {
 
             this.getPhoto(this.formUpdateEl).then(
                 (content) => {
-                    if (!values.photo) {
+                    if (userOld._name !== values._name && userOld._photo.startsWith('https://placehold.co/30x30/') && content.startsWith('https://placehold.co/30x30/')) {
+                        let firstLetter = values._name.toUpperCase().charAt(0);
+                        const imageUrl = 'https://placehold.co/30x30/' + this.getRandomColor() + '/white?text=' + firstLetter;
+                        result._photo = imageUrl;
+                    } else if (!values.photo) {
                         result._photo = userOld._photo;
                     } else {
                         result._photo = content;
