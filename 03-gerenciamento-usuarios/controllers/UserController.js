@@ -38,22 +38,10 @@ class UserController {
                         result._photo = content;
                     }
 
-                    tr.dataset.user = JSON.stringify(result);
-                    tr.innerHTML = `
-                        <td>
-                            <img src="${result._photo}" alt="User Image" class="img-circle img-sm" />
-                        </td>
-                        <td>${result._name}</td>
-                        <td>${result._email}</td>
-                        <td>${result._admin ? 'Sim' : 'Não'}</td>
-                        <td>${Utils.dateFormat(result._register)}</td>
-                        <td>
-                            <button type="button" class="btn btn-edit btn-primary btn-xs btn-flat">Editar</button>
-                            <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
-                        </td>
-                    `;
+                    let user = new User();
+                    user.loadFromJSON(result);
+                    this.getTR(user, tr);
 
-                    this.addEventsTR(tr);
                     this.updateCount();
                     this.formUpdateEl.reset();
                     this.showPanelCreate();
@@ -196,10 +184,14 @@ class UserController {
     }
 
     addLine(dataUser) {
-        let tr = document.createElement('tr');
+        let tr = this.getTR(dataUser);
+        this.tableEl.appendChild(tr);
+        this.updateCount();
+    }
 
+    getTR(dataUser, tr = null) {
+        if (tr === null) tr = document.createElement('tr');
         tr.dataset.user = JSON.stringify(dataUser);
-
         tr.innerHTML = `
             <td>
                 <img src="${dataUser.photo}" alt="User Image" class="img-circle img-sm" />
@@ -213,10 +205,8 @@ class UserController {
                 <button type="button" class="btn btn-delete btn-danger btn-xs btn-flat">Excluir</button>
             </td>
         `;
-
         this.addEventsTR(tr);
-        this.tableEl.appendChild(tr);
-        this.updateCount();
+        return tr;
     }
 
     addEventsTR(tr) {
@@ -235,7 +225,6 @@ class UserController {
 
             for (let name in json) {
                 let field = this.formUpdateEl.querySelector('[name=' + name.replace('_', '') + ']');
-
                 if (field) {
                     switch (field.type) {
                         case 'file':
