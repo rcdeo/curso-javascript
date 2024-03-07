@@ -1,3 +1,4 @@
+// @ts-nocheck
 class User {
     constructor(name, gender, birth, country, email, password, photo, admin) {
         this._id;
@@ -82,9 +83,11 @@ class User {
     }
 
     getNewID() {
-        if (!window.id) window.id = 0;
-        id++;
-        return id;
+        let usersID = parseInt(localStorage.getItem('usersID'));
+        if (!usersID > 0) usersID = 0;
+        usersID++;
+        localStorage.setItem('usersID', usersID);
+        return usersID;
     }
 
     save() {
@@ -101,6 +104,18 @@ class User {
             this.id = this.getNewID();
             users.push(this);
         }
+
+        localStorage.setItem('users', JSON.stringify(users));
+    }
+
+    remove() {
+        let users = User.getUsersStorage();
+
+        users.forEach((userData, index) => {
+            if (this.id == userData._id) {
+                users.splice(index, 1); // remove
+            }
+        });
 
         localStorage.setItem('users', JSON.stringify(users));
     }
