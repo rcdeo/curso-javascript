@@ -2332,7 +2332,8 @@ clipping with .c-snackbar border. */
   border-radius: 0px 0px 4px 4px;
   width: 100%;
   margin-top: -4px;
-  background-color: #d6e8fa;
+  background-color: #d6fae2
+  ;
   height: 4px;
 }
 
@@ -2340,7 +2341,7 @@ clipping with .c-snackbar border. */
   width: 0%;
   height: 4px;
   border-radius: 0px 4px 4px 8px;
-  background-color: #00ff70;
+  background-color: #12c962;
   transition: all linear 1s;
 }
 
