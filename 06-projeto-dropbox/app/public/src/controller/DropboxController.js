@@ -7,9 +7,11 @@ class DropboxController {
         this.progressBarEl = this.snackModalEl.querySelector('.mc-progress-bar-fg');
         this.filenameEl = this.snackModalEl.querySelector('.filename');
         this.timeleftEl = this.snackModalEl.querySelector('.timeleft');
+        this.listFilesEl = document.querySelector('#list-of-files-and-directories');
 
         this.connectFirebase();
         this.initEvents();
+        this.readFiles();
     }
 
     connectFirebase() {
@@ -144,13 +146,16 @@ class DropboxController {
                 `;
                 break;
 
-            case 'image/jpg':
             case 'image/jpeg':
             case 'image/png':
             case 'image/gif':
             case 'image/bmp':
-            case 'image/svg':
             case 'image/webp':
+            case 'image/svg':
+            case 'image/tiff':
+            case 'image/heic':
+            case 'image/heif':
+            case 'image/raw':
                 return `
                     <svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="160px" height="160px" viewBox="0 0 160 160" enable-background="new 0 0 160 160" xml:space="preserve">
                         <filter height="102%" width="101.4%" id="mc-content-unknown-large-a" filterUnits="objectBoundingBox" y="-.5%" x="-.7%">
@@ -228,11 +233,14 @@ class DropboxController {
                 `;
                 break;
 
-            case 'audio/mp3':
-            case 'audio/wav':
-            case 'audio/flac':
             case 'audio/aac':
+            case 'audio/mp3':
             case 'audio/ogg':
+            case 'audio/flac':
+            case 'audio/alac':
+            case 'audio/wav':
+            case 'audio/aiff':
+            case 'audio/amr':
                 return `
                     <svg width="160" height="160" viewBox="0 0 160 160" class="mc-icon-template-content tile__preview tile__preview--icon">
                         <title>content-audio-large</title>
@@ -255,10 +263,17 @@ class DropboxController {
                 break;
 
             case 'video/mp4':
-            case 'video/avi':
             case 'video/mov':
             case 'video/mkv':
+            case 'video/avi':
+            case 'video/flv':
+            case 'video/hevc':
             case 'video/wmv':
+            case 'video/mpeg':
+            case 'video/3gp':
+            case 'video/vp9':
+            case 'video/av1':
+            case 'video/ogg':
                 return `
                     <svg width="160" height="160" viewBox="0 0 160 160" class="mc-icon-template-content tile__preview tile__preview--icon">
                         <title>content-video-large</title>
@@ -302,12 +317,28 @@ class DropboxController {
         }
     }
 
-    getFileView() {
-        return `
-            <li>
-                ${this.getFileIconView(file)}
-                <div class="name text-center">${file.name}</div>
-            </li>
+    getFileView(file, key) {
+        let li = document.createElement('li');
+        li.dataset.key = key;
+
+        li.innerHTML = `
+            ${this.getFileIconView(file)}
+            <div class="name text-center">${file.name}</div>
         `;
+
+        return li;
+    }
+
+    readFiles() {
+        this.getFirebaseRef().on('value', (snapshot) => {
+            this.listFilesEl.innerHTML = '';
+
+            snapshot.forEach((snapshotItem) => {
+                let key = snapshotItem.key;
+                let data = snapshotItem.val();
+
+                this.listFilesEl.appendChild(this.getFileView(data, key));
+            });
+        });
     }
 }
