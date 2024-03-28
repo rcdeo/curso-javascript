@@ -1,6 +1,6 @@
 class Format {
     /**
-     * Este método é usado pelo método loadElements para converter os IDs dos
+     * Este método é usado pelo método `loadElements` para converter os IDs dos
      * elementos em nomes de propriedades em camelCase.
      */
     static getCamelCase(text) {
