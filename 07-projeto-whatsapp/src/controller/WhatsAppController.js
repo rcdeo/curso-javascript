@@ -4,6 +4,7 @@ class WhatsAppController {
 
         this.elementsPrototype();
         this.loadElements();
+        this.initEvents();
     }
 
     /**
@@ -22,10 +23,10 @@ class WhatsAppController {
      * de elementos HTML.
      *
      * @list-items
-     *   * controle de visibilidade
-     *   * manipulação de eventos
-     *   * aplicação de estilos
-     *   * manipulação de classes
+     *   * Visibilidade: hide( ), show( ), toggle( )
+     *   * Eventos: on(events, fn)
+     *   * Estilos: css(styles)
+     *   * Classes: addClass(name), removeClass(name), toggleClass(name), hasClass(name)
      */
     elementsPrototype() {
         Element.prototype.hide = function () {
@@ -75,5 +76,36 @@ class WhatsAppController {
         Element.prototype.hasClass = function (name) {
             return this.classList.contains(name);
         };
+    }
+
+    initEvents() {
+        this.el.myPhoto.on('click', (e) => {
+            this.closeAllLeftPanel();
+            this.el.panelEditProfile.show();
+            setTimeout(() => {
+                this.el.panelEditProfile.addClass('open');
+            }, 300);
+        });
+
+        this.el.btnNewContact.on('click', (e) => {
+            this.closeAllLeftPanel();
+            this.el.panelAddContact.show();
+            setTimeout(() => {
+                this.el.panelAddContact.addClass('open');
+            }, 300);
+        });
+
+        this.el.btnClosePanelEditProfile.on('click', (e) => {
+            this.el.panelEditProfile.removeClass('open');
+        });
+
+        this.el.btnClosePanelAddContact.on('click', (e) => {
+            this.el.panelAddContact.removeClass('open');
+        });
+    }
+
+    closeAllLeftPanel() {
+        this.el.panelAddContact.hide();
+        this.el.panelEditProfile.hide();
     }
 }
