@@ -8,8 +8,10 @@ class WhatsAppController {
     }
 
     /**
-     * Selecionar os elementos DOM pelo ID e armazenar uma referência a eles na
-     * propriedade `el` do objeto `WhatsAppController`.
+     * Seleciona os elementos DOM pelo ID e armazena uma referência a eles na propriedade `el` do objeto `WhatsAppController`.
+     *
+     * Este método percorre todos os elementos no DOM com um ID e os armazena em um objeto com chaves em camelCase.
+     * As chaves do objeto correspondem aos IDs dos elementos e os valores correspondem aos próprios elementos.
      */
     loadElements() {
         this.el = {};
@@ -19,8 +21,7 @@ class WhatsAppController {
     }
 
     /**
-     * Adiciona métodos úteis ao protótipo `Element` para manipulação aprimorada
-     * de elementos HTML.
+     * Adiciona métodos úteis ao protótipo `Element` para manipulação aprimorada de elementos HTML.
      *
      * @list-items
      *   * Visibilidade: hide( ), show( ), toggle( )
