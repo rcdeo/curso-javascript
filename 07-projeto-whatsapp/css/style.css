@@ -16007,122 +16007,122 @@ html[dir=rtl] ._2ICcy:after{
 #record-microphone{
     padding: 3px 10px;
 }
- .emojik.wa.b59 {
-     background-image: url('../img/41d5efb8acd3487afc5ddea1501f0b08.webp');
+.emojik.wa.b59 {
+    background-image: url('../img/41d5efb8acd3487afc5ddea1501f0b08.webp');
 }
- .emojik.wa.b73 {
-     background-image: url('../img/e62a5283b1ce6074795c0187d2b1f558.webp');
+.emojik.wa.b73 {
+    background-image: url('../img/e62a5283b1ce6074795c0187d2b1f558.webp');
 }
- .emojik.wa.b90 {
-     background-image: url('../img/57808f1baef5613ae7430addef0ae850.webp');
+.emojik.wa.b90 {
+    background-image: url('../img/57808f1baef5613ae7430addef0ae850.webp');
 }
- .emojik.wa.b61 {
-     background-image: url('../img/83a619e0b15471e086d43e690dacae77.webp');
+.emojik.wa.b61 {
+    background-image: url('../img/83a619e0b15471e086d43e690dacae77.webp');
 }
- .emojik.wa.b60 {
-     background-image: url('../img/53127fbfa400f71fc1dd0c0b99894922.webp');
+.emojik.wa.b60 {
+    background-image: url('../img/53127fbfa400f71fc1dd0c0b99894922.webp');
 }
- .emojik.wa.b74 {
-     background-image: url('../img/d7e2cc8550cba88f118186e51c38d72c.webp');
+.emojik.wa.b74 {
+    background-image: url('../img/d7e2cc8550cba88f118186e51c38d72c.webp');
 }
- .emojik.wa.b81 {
-     background-image: url('../img/14a4e42043b696112919bfd1b6309b26.webp');
+.emojik.wa.b81 {
+    background-image: url('../img/14a4e42043b696112919bfd1b6309b26.webp');
 }
- .emojik.wa.b71 {
-     background-image: url('../img/59e6ec989ff0b2041745837cbc159867.webp');
+.emojik.wa.b71 {
+    background-image: url('../img/59e6ec989ff0b2041745837cbc159867.webp');
 }
- .emojik.wa.b87 {
-     background-image: url('../img/122e775c91b96318a63daf7865786fdc.webp');
+.emojik.wa.b87 {
+    background-image: url('../img/122e775c91b96318a63daf7865786fdc.webp');
 }
- .emojik.wa.b45 {
-     background-image: url('../img/843eccaa1a42b8fbe80e2c2e145fa0bf.webp');
+.emojik.wa.b45 {
+    background-image: url('../img/843eccaa1a42b8fbe80e2c2e145fa0bf.webp');
 }
- .emojik.wa.b44 {
-     background-image: url('../img/b5ad4d36b724bf3aa48e5f6bbec634ad.webp');
+.emojik.wa.b44 {
+    background-image: url('../img/b5ad4d36b724bf3aa48e5f6bbec634ad.webp');
 }
- .emojik.wa.b48 {
-     background-image: url('../img/ce550ac4afce4d2fd49d862db443cabc.webp');
+.emojik.wa.b48 {
+    background-image: url('../img/ce550ac4afce4d2fd49d862db443cabc.webp');
 }
- .emojik.wa.b17 {
-     background-image: url('../img/667e3712186e4bac44066e086521b46a.webp');
+.emojik.wa.b17 {
+    background-image: url('../img/667e3712186e4bac44066e086521b46a.webp');
 }
- .emojik.wa.b30 {
-     background-image: url('../img/960dc1c1fb4887fb84d869425ea2b881.webp');
+.emojik.wa.b30 {
+    background-image: url('../img/960dc1c1fb4887fb84d869425ea2b881.webp');
 }
- .emojik.wa.b64 {
-     background-image: url('../img/d8ea2cc09853bb7d2f07deb57862587f.webp');
+.emojik.wa.b64 {
+    background-image: url('../img/d8ea2cc09853bb7d2f07deb57862587f.webp');
 }
- .emojik.wa.b30 {
-     background-image: url('../img/960dc1c1fb4887fb84d869425ea2b881.webp');
+.emojik.wa.b30 {
+    background-image: url('../img/960dc1c1fb4887fb84d869425ea2b881.webp');
 }
- .emojik.wa.b72 {
-     background-image: url('../img/21153985726f011c4743bddde2cec195.webp');
+.emojik.wa.b72 {
+    background-image: url('../img/21153985726f011c4743bddde2cec195.webp');
 }
- .emojik.wa.b29 {
-     background-image: url('../img/81e827fdf825193402a93ff78c0c13e8.webp');
+.emojik.wa.b29 {
+    background-image: url('../img/81e827fdf825193402a93ff78c0c13e8.webp');
 }
- .panel-main {
-     height: 10%;
+.panel-main {
+    height: 10%;
 }
- .panel-down {
-     transform: translateY(350px);
-     -webkit-transition: 0.3s ease-in-out;
-     -moz-transition: 0.3s ease-in-out;
-     -o-transition: 0.3s ease-in-out;
-     transition: 0.3s ease-in-out;
+.panel-down {
+    transform: translateY(350px);
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
- .panel-down.open {
-     display: block;
-     transform: translateY(0px);
+.panel-down.open {
+    display: block;
+    transform: translateY(0px);
 }
- .panel-left {
-     height: 100%;
-     transform: translateX(-450px);
-     -webkit-transition: 0.3s ease-in-out;
-     -moz-transition: 0.3s ease-in-out;
-     -o-transition: 0.3s ease-in-out;
-     transition: 0.3s ease-in-out;
+.panel-left {
+    height: 100%;
+    transform: translateX(-450px);
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
- .panel-left.open {
-     display: block;
-     transform: translateX(0px);
+.panel-left.open {
+    display: block;
+    transform: translateX(0px);
 }
- .menu-dropdown {
-     display:none;
+.menu-dropdown {
+    display:none;
 }
- .menu-dropdown.open {
-     display:block;
+.menu-dropdown.open {
+    display:block;
 }
- .btn-attach {
-     opacity: 0;
-     -webkit-transition: 0.4s ease-in-out;
-     -moz-transition: 0.4s ease-in-out;
-     -o-transition: 0.4s ease-in-out;
-     transition: 0.4s ease-in-out;
-     transform: translateY(-300px) scaleX(0) scaleY(0);
+.btn-attach {
+    opacity: 0;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    transform: translateY(-300px) scaleX(0) scaleY(0);
 }
- .open .btn-attach {
-     opacity: 1;
-     transform: translateY(0px) scaleX(1) scaleY(1);
+.open .btn-attach {
+    opacity: 1;
+    transform: translateY(0px) scaleX(1) scaleY(1);
 }
- #record-microphone {
-     display: none;
+#record-microphone {
+    display: none;
 }
- .record-microphone #record-microphone {
-     display: block;
+.record-microphone #record-microphone {
+    display: block;
 }
- .record-microphone #btn-send-microphone {
-     display: none;
+.record-microphone #btn-send-microphone {
+    display: none;
 }
- .video-container {
-     width: 100%;
-     height: 100%;
-     max-width: 885px;
-     max-height: 664px;
-     margin: 0 auto;
+.video-container {
+    width: 100%;
+    height: 100%;
+    max-width: 885px;
+    max-height: 664px;
+    margin: 0 auto;
 }
- .btn-reshoot {
-     cursor: pointer;
+.btn-reshoot {
+    cursor: pointer;
 }
 #btn-save-panel-edit-profile {
     cursor: pointer;
