@@ -4,7 +4,9 @@
     "description": "![WhatsApp](https://github.com/rcdeo/curso-javascript/assets/16638651/9da6bb84-9077-492d-8f1f-7e54774fb99a)",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack --config webpack.config.js",
+        "start": "webpack-dev-server"
     },
     "author": "Rafael Cortes",
     "license": "ISC",
