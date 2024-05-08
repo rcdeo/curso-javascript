@@ -1,4 +1,4 @@
-class Format {
+export class Format {
     /**
      * Este método converte IDs de elementos HTML em nomes de propriedades em CamelCase, que são utilizados pelo método `loadElements` para carregar os elementos na página.
      *

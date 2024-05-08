@@ -131,3 +131,6 @@ web_modules/
 
 # Formidable
 upload
+
+# webpack
+dist

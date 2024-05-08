@@ -4,8 +4,10 @@ module.exports = {
     mode: 'development',
     entry: './src/app.js',
     output: {
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        path: path.resolve(__dirname, '/dist'),
-        publicPath: 'dist',
+    },
+    devServer: {
+        static: './',
     },
 };
