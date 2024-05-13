@@ -11,6 +11,7 @@
     "author": "Rafael Cortes",
     "license": "ISC",
     "dependencies": {
+        "pdfjs-dist": "^4.2.67",
         "webpack": "^5.91.0",
         "webpack-cli": "^5.1.4",
         "webpack-dev-server": "^5.0.4"
